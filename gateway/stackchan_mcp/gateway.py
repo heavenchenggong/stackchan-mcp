@@ -38,9 +38,10 @@ class Gateway:
         """URL for ESP32 to POST captured photos to.
 
         VISION_HOST should be the LAN IP of the host running this gateway,
-        as seen from the ESP32 (e.g. "192.168.1.42"). Falls back to
-        "127.0.0.1" with a warning if unset; in that case the ESP32 will
-        not be able to reach the capture endpoint over the network.
+        as seen from the ESP32 (e.g. something like 192.168.x.y on a typical
+        home network). Falls back to "127.0.0.1" with a warning if unset; in
+        that case the ESP32 will not be able to reach the capture endpoint
+        over the network.
         """
         host = os.getenv("VISION_HOST")
         if not host:

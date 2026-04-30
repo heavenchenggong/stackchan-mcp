@@ -26,7 +26,8 @@ uv sync
 Edit `.env`:
 - `STACKCHAN_TOKEN`: Bearer token for ESP32 auth (must match firmware setting)
 - `VISION_HOST`: LAN IP of this machine, as seen from the ESP32
-  (e.g. `192.168.1.42`). Required for `take_photo`.
+  (something like `192.168.x.y` on a typical home network — run `ifconfig`
+  or `ip addr` to find it). Required for `take_photo`.
 
 ## Run
 
@@ -64,7 +65,7 @@ uv run pytest tests/ -v
       ],
       "env": {
         "STACKCHAN_TOKEN": "your-secret-token-here",
-        "VISION_HOST": "192.168.1.42"
+        "VISION_HOST": "your.host.lan.ip"
       }
     }
   }
