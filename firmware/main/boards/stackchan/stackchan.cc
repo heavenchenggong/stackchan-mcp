@@ -2251,7 +2251,7 @@ private:
         static bool was_listening = false;        // listening 突入のエッジ検出
         const int64_t TOUCH_THRESHOLD_MS = 500;   // 触摸时长阈值，超过500ms视为长按
         const int64_t DEBOUNCE_MS = 300;          // 直前 release から N ms 以内の press は無視
-        const int64_t LISTEN_TIMEOUT_MS = 30000;  // listening 状態に N ms 以上滞在で auto stop
+        const int64_t LISTEN_TIMEOUT_MS = 300000;  // 5 minutes — gateway-side VAD already handles silence detection
 
         auto& app = Application::GetInstance();
         int64_t now_ms = esp_timer_get_time() / 1000;
